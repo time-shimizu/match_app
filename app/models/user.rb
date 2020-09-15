@@ -7,6 +7,8 @@ class User < ApplicationRecord
                                foreign_key: "to_user_id",
                                dependent: :destroy
   has_many :enlikes, through: :passive_reactions, source: :fron_user
+  has_many :chat_messages
+  has_many :chat_room_users
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
